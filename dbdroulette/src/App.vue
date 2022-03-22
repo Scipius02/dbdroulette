@@ -1,23 +1,27 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import MainTitle from '@/components/MainTitle.vue'
+import Perks from '@/components/Perks.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div id=  "app">
+    <img alt="DBD logo" class="logo" src="../src/assets/images/Dead-by-Daylight-Logo-700x394.png" width="400" height="220" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <MainTitle msg="Roulette" />
+      <Perks />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/roulette">Roulette</RouterLink>
       </nav>
     </div>
-  </header>
+    <RouterView />
+  </div>
 
-  <RouterView />
+  
 </template>
 
 <style>
@@ -45,6 +49,12 @@ a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+.red {
+  text-decoration: none;
+  color: rgb(184, 3, 3);
   transition: 0.4s;
 }
 
