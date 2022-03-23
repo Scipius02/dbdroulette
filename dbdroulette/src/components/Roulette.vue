@@ -55,20 +55,32 @@
 
         if (this.counter == 1) {
           const allPerks = document.querySelectorAll(".perk");
-          let randomPerk = Math.floor(Math.random() * allPerks.length);
-          console.log(randomPerk);
+          let randomOnePerk = Math.floor(Math.random() * allPerks.length);
+          console.log(randomOnePerk);
           const perk1 = document.querySelector("#roulette-1");
-          perk1.src = allPerks[randomPerk].src;
-          perk1.title = allPerks[randomPerk].title;
+          perk1.src = allPerks[randomOnePerk].src;
+          perk1.title = allPerks[randomOnePerk].title;
+        }
+        
+        else if (this.counter == 2) {
+          const tierTwoPerks = document.querySelectorAll(".rating-3");
+          let randomTwoPerk = Math.floor(Math.random() * tierTwoPerks.length);
+          const perk2 = document.querySelector("#roulette-2");
+          perk2.src = tierTwoPerks[randomTwoPerk].src;
+          perk2.title = tierTwoPerks[randomTwoPerk].title;
         }
 
-        else if (this.counter == 2) {
+        // this one is a bit harder: need to create drop down field then filter based on that
+        else if (this.counter == 3) {
           const perkDescriptionWindow = document.querySelector(".perk-description-window");
           perkDescriptionWindow.display = "block";
           const perkDropDownItems = document.querySelectorAll(".drop-down-item");
           perkDropDownItems.display = "block";
           console.log("SELECT");
         }
+
+        // this is the hardest filter: need to pass the counter prop into perks.vue, then each of 
+        // those perks can be clicked on then that passes back to here. PROPS/COMPONENTS: READ
       },
 
       ResetButton() {
