@@ -1,13 +1,13 @@
 <template>
   <div class="roulette-window">
-    <button>Spin</button>
+    <button v-on:click="SpinButton">Spin</button>
     <ul>
-      <img id="roulette-1"/>
-      <img id="roulette-2"/>
-      <img id="roulette-3"/>
-      <img id="roulette-4"/>
+      <img src="../assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp" class="four-perk" id="roulette-1"/>
+      <img src="../assets/images/survivor_emblems/EmblemIcon_evader_none.webp" class="four-perk" id="roulette-2"/>
+      <img src="../assets/images/survivor_emblems/EmblemIcon_lightbringer_none.webp" class="four-perk" id="roulette-3"/>
+      <img src="../assets/images/survivor_emblems/EmblemIcon_unbroken_none.webp" class="four-perk" id="roulette-4"/>
     </ul>
-    <button>Reset</button>
+    <button v-on:click="ResetButton">Reset</button>
   </div>
 </template>
 
@@ -41,4 +41,41 @@
 </style>
 
 <script>
+  //import PerkDropDownWindow from '@/components/PerkDropDownWindow.vue'
+  export default {
+    data() {
+      return {
+        counter: 0,
+      }
+    },
+
+    methods: {
+      SpinButton() {
+        this.counter += 1;
+
+        if (this.counter == 1) {
+          const allPerks = document.querySelectorAll(".perk");
+          let randomPerk = Math.floor(Math.random() * allPerks.length);
+          console.log(randomPerk);
+          const perk1 = document.querySelector("#roulette-1");
+          perk1.src = allPerks[randomPerk].src;
+          perk1.title = allPerks[randomPerk].title;
+        }
+
+        else if (this.counter == 2) {
+          const perkDescriptionWindow = document.querySelector(".perk-description-window");
+          perkDescriptionWindow.display = "block";
+          const perkDropDownItems = document.querySelectorAll(".drop-down-item");
+          perkDropDownItems.display = "block";
+          console.log("SELECT");
+        }
+      },
+
+      ResetButton() {
+        this.counter = 0;
+        const fourPerks = document.querySelectorAll(".four-perk");
+        //fourPerks[0].src = "../assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp";
+      }
+    },
+  }
 </script>

@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import MainTitle from '@/components/MainTitle.vue'
 import Perks from '@/components/Perks.vue'
+import PerkDescription from '@/components/PerkDescription.vue'
 </script>
 
 <template>
@@ -12,10 +13,13 @@ import Perks from '@/components/Perks.vue'
       <MainTitle msg="Roulette" />
       <Perks />
 
+      <PerkDescription />
+
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <!--<RouterLink to="/">Home</RouterLink>-->
+        <RouterLink to="/roulette">Survivor Roulette</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/roulette">Roulette</RouterLink>
+        
       </nav>
     </div>
     <RouterView />
