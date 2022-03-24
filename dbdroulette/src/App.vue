@@ -6,7 +6,7 @@ import PerkDescription from '@/components/PerkDescription.vue'
 </script>
 
 <template>
-  <div id=  "app">
+  <div id= "app">
     <img alt="DBD logo" class="logo" src="../src/assets/images/Dead-by-Daylight-Logo-700x394.png" width="400" height="220" />
 
     <div class="wrapper">
@@ -37,8 +37,18 @@ import PerkDescription from '@/components/PerkDescription.vue'
   padding: 2rem;
 
   font-weight: normal;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;

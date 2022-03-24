@@ -1,18 +1,6 @@
 <template>
   <div class="perk-description-window">
-    <p>hello</p>
-    <div class="drop-down-container">
-      <p class="drop-down-item">Item</p>
-      <p class="drop-down-item">Exhaustion</p>
-      <p class="drop-down-item">Healing</p>
-      <p class="drop-down-item">Information</p>
-      <p class="drop-down-item">Wiggle</p>
-      <p class="drop-down-item">Looping</p>
-      <p class="drop-down-item">Support</p>
-      <p class="drop-down-item">Stealth</p>
-      <p class="drop-down-item">Second Chance</p>
-      <p class="drop-down-item">Diversion</p>
-  </div>
+    <p class="perk-description">Press Spin to receive your first random perk!</p>
   </div>
 </template>
 
@@ -30,15 +18,18 @@
 
   .drop-down-container {
     position: relative;
-    display: inline-block;
+    display: block;
   }
-
+  
   .drop-down-item {
-    display:flex;
-    position: absolute;
-    background-color: #f1f1f1;
+    display: flex;
+    position: relative;
+    background-color: #bbb7b7f6;
+    /*background-color: red;*/
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    /*z-index: 1;*/
+    color: black;
+    overflow: auto;
   }
 </style>
