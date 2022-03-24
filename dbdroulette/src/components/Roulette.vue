@@ -137,7 +137,7 @@
         else if (this.counter == 3 && this.category == null) {
           console.log("INVALID");
           this.counter == 2;
-          let spinButton = document.querySelector(".spin-button");
+          const spinButton = document.querySelector(".spin-button");
           spinButton.disabled = true;
 
           const perkExplanation = document.querySelector(".perk-description");
@@ -157,17 +157,24 @@
 
           const perkExplanation = document.querySelector(".perk-description");
           perkExplanation.textContent = "Free choice! Click any perk to add that to your build."
+        
+          // emit event to share data to app.vue, which will get passed as a prop back down to perks.vue
+          this.$emit('counter', 4);
         }
 
         // this is the hardest filter: need to pass the counter prop into perks.vue, then each of 
-        // those perks can be clicked on then that passes back to here. PROPS/COMPONENTS: READ
+        // those perks can be clicked on. PROPS/COMPONENTS: READ
       },
 
       ResetButton() {
         this.counter = 0;
         let fourPerks = document.querySelectorAll(".four-perk");
-        fourPerks[0].src = "../assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp";
-        fourPerks[0].title = "";
+        for (let i = 0; i < 3; i++) {
+          fourPerks[i].src = "../assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp";
+          fourPerks[i].title = "";
+        }
+
+        this.category = null;
       },
 
       PassCategory(perkCategory) {
@@ -175,6 +182,8 @@
 
         let spinButton = document.querySelector(".spin-button");
         spinButton.disabled = false;
+
+        this.counter = 2;
 
         const perkExplanation = document.querySelector(".perk-description");
         perkExplanation.textContent = this.category + " selected!";

@@ -1,6 +1,9 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>DBD Roulette</h1>
+    <p>This is a simple app designed to give me some practice with Vue components, routing, and web dev.</p>
+    <p>A later version of this app should use dynamic loading of assets from a db.</p>
+    <p></p>
   </div>
 </template>
 
@@ -11,5 +14,12 @@
     display: flex;
     align-items: center;
   }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 </style>

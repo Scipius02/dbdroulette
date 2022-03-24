@@ -115,4 +115,16 @@
 
 <script>
   // eventual TODO: if counter is passed from roulette and is less than 3, clicking a perk deactivates it and hides it from view (ideally we would want to just disable it)
+  export default {
+    props: ['counter'],
+    methods: {
+      finalSpin(){
+        if (this.counter == 4) {
+          console.out("wheeee");
+        }
+      }
+    }
+
+  }
+  
 </script>
