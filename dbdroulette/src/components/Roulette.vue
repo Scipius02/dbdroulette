@@ -170,7 +170,8 @@
         this.counter = 0;
         let fourPerks = document.querySelectorAll(".four-perk");
         for (let i = 0; i < 3; i++) {
-          fourPerks[i].src = "../assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp";
+          fourPerks[i].src = "/src/assets/images/survivor_emblems/EmblemIcon_benevolent_none.webp";
+          // why is this ok when ../assets didn't work?
           fourPerks[i].title = "";
         }
 
